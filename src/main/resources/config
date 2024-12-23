@@ -1,0 +1,10 @@
+style.path=C:\\osm2pgsql-bin\\default.style
+db.user=postgres
+db.password=password
+db.name=postgres
+db.temp.schema=temp_map_schema
+db.main.schema=main_map_schema
+osm.file.path=C:\\work\\renumbered_roads_kaliningrad_4326.osm.pbf
+temp_map_schema
+renumbered_roads_kaliningrad_4326.osm
+kaliningrad-latest.osm
