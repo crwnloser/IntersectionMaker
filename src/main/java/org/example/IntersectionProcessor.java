@@ -13,7 +13,7 @@ public class IntersectionProcessor {
     private final JdbcTemplate jdbcTemplate;
     private final String tempTable;
     private final String mainTable;
-    private static final int SRID = 3857; // Подставьте нужный SRID
+    private static final int SRID = 3857;
 
     public IntersectionProcessor(String user, String password, String dbName, String tempSchemaName, String mainSchemaName) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -27,14 +27,14 @@ public class IntersectionProcessor {
     }
 
     public void processIntersections() {
-        Set<Long> processedIds = new HashSet<>(); // Tracks already processed main line IDs
-        Set<Long> deleteList = new HashSet<>();   // Tracks IDs of lines marked for deletion
+        Set<Long> processedIds = new HashSet<>();
+        Set<Long> deleteList = new HashSet<>();
 
         while (true) {
             Map<Long, List<Intersection>> intersections = findIntersections();
             if (intersections.isEmpty()) {
                 System.out.println("No intersections found. Exiting loop.");
-                break; // Exit when no intersections are found
+                break;
             }
 
             // Флаг, чтобы отследить, были ли изменения в этой итерации
